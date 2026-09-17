@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalRole = document.getElementById("modal-role");
     const modalName = document.getElementById("modal-name");
     const modalDescription = document.getElementById("modal-description");
-    const modalAGe = document.getElementById("modal-age");
+    const modalAge = document.getElementById("modal-age");
     const modalHeight = document.getElementById("modal-height");
     const modalGender = document.getElementById("modal-gender");
     const modalStory = document.getElementById("modal-story");
@@ -106,11 +106,11 @@ function updateModalImage() {
     modalImage.alt = "Character Image";
 
     if (currentCharacterImages.length <= 1) {
-        if (prevImage) = prevImage.style.display = "none";
-        if (nextImage) = nextImage.style.display = "none";
+        if (prevImage) prevImage.style.display = "none";
+        if (nextImage) nextImage.style.display = "none";
     } else {
-        if (prevImage) = prevImage.style.display = "flex";
-        if (nextImage) = nextImage.style.display = "flex";
+        if (prevImage) prevImage.style.display = "flex";
+        if (nextImage) nextImage.style.display = "flex";
     }
 }
 
@@ -144,7 +144,7 @@ if (nextImage) {
     });
 }
 
-document.adEventListener("keydown", event => {
+document.addEventListener("keydown", event => {
     if (event.key === "Escape") closeModal();
 });
 
@@ -164,7 +164,7 @@ filterButtons.forEach(button => {
         const category = button.getAttribute("data-category");
         const value = button.getAttribute("data-value");
 
-        if (acctiveFilters[category] === value) {
+        if (activeFilters[category] === value) {
             activeFilters[category] = null;
             button.classList.remove("active");
         } else {

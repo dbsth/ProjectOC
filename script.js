@@ -83,6 +83,12 @@ const modal =
 const modalImage =
     document.getElementById("modal-image");
 
+const prevImage = document.getElementById("prev-image");
+const nextImage = document.getElementById("next-image");
+
+let currentCharacterImages = [];
+let currentImageIndex = 0;
+
 const modalRole =
     document.getElementById("modal-role");
 
@@ -133,8 +139,11 @@ document
                 return;
             }
 
-            modalImage.src = character.image;
-            modalImage.alt = character.name;
+            // 캐릭터 이미지 설정
+            currentCharacterImages = character.images;
+            currentImageIndex = 0;
+
+            updateModalImage();
 
             modalRole.textContent = character.role;
             modalName.textContent = character.name;
@@ -155,6 +164,21 @@ document
 
     });
 
+function updateModalImage() {
+
+    modalImage.src = currentCharacterImages[currentImageIndex];
+
+    modalImage.alt = "캐릭터 이미지";
+
+    if (currentCharacterImages.length <= 1) {
+        prevImage.style.display = "none";
+        nextImage.style.display = "none";
+    } else {
+        prevImage.style.display = "flex";
+        nextImage.style.display = "flex";
+    }
+
+}
 
 /* =========================
    CLOSE MODAL
@@ -178,6 +202,35 @@ function closeModal() {
         "";
 
 }
+
+prevImage.addEventListener("click", event => {
+
+    event.stopPropagation();
+
+    currentImageIndex--;
+
+    if (currentImageIndex < 0) {
+        currentImageIndex = currentCharacterImages.length - 1;
+    }
+
+    updateModalImage();
+
+});
+
+
+nextImage.addEventListener("click", event => {
+
+    event.stopPropagation();
+
+    currentImageIndex++;
+
+    if (currentImageIndex >= currentCharacterImages.length) {
+        currentImageIndex = 0;
+    }
+
+    updateModalImage();
+
+});
 
 
 /* ESC 키로 닫기 */

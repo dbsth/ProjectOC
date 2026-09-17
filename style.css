@@ -531,6 +531,35 @@ nav a:hover {
 
 
 /* =========================
+   CHARACTER CARD TAGS
+========================= */
+
+.character-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 15px; /* 설명 문구와의 간격 */
+}
+
+.tag {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #888;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    padding: 3px 8px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* 카드에 마우스를 올렸을 때 태그의 은은한 하이라이트 효과 */
+.character-card:hover .tag {
+    border-color: #555;
+    color: #ccc;
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 

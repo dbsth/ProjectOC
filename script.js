@@ -3,7 +3,11 @@ const characters = {
     OwnerCha: {
         name: "Unknown",
         role: "Owner Character",
-        image: "images/OwnerCha.jpg",
+        image: [
+            "images/OwnerCha.jpg",
+            "images/OwnerCha2.jpg",
+            "images/OwnerCha3.jpg"
+        ],
 
         age: "Unknown",
         height: "160 cm",
@@ -23,8 +27,11 @@ const characters = {
     Cheongram: {
         name: "麗 淸藍",
         role: "Devil",
-        image: "images/Cheongram.jpg",
-
+        image: [
+            "images/Cheongram.jpg",
+            "images/Cheongram2.jpg"
+        ],
+        
         age: "Unknown",
         height: "157 cm",
         gender: "Female",
@@ -43,7 +50,11 @@ const characters = {
     Neuru: {
         name: "느루",
         role: "Zombie",
-        image: "images/Neuru.jpg",
+        image: [
+            "images/Neuru.jpg",
+            "images/Neuru2.jpg",
+            "images/Neuru3.jpg"
+        ],
 
         age: "22",
         height: "162.7 cm",

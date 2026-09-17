@@ -1,66 +1,61 @@
 const characters = {
 
     character1: {
-        name: "ARTHUR",
-        role: "KNIGHT",
-        image: "images/character1.jpg",
+        name: "오너캐",
+        role: "Owner Character",
+        image: "images/OwnerCha.jpg",
 
-        age: "24",
-        height: "188 cm",
-        gender: "Male",
-        occupation: "Knight",
+        age: "Unknown",
+        height: "160 cm",
+        gender: "Female",
+        occupation: "Unknown",
 
         description:
-            "A knight who has served the Northern Grand Duke since childhood.",
+            "Owner Character.",
 
         story:
-            "Arthur grew up alongside the Northern Grand Duke. " +
-            "Once a cheerful and lively child, he gradually became " +
-            "a blunt and disciplined knight as he grew older. " +
-            "Despite his cold appearance, he remains deeply loyal " +
-            "to the person he has protected all his life."
+            "오너캐는 오너캐인데 관련 스토리가 없다. " +
+            "오너캐 이름 어케 정하는데..."
     },
 
 
     character2: {
-        name: "ASTER",
-        role: "MAGE",
-        image: "images/character2.jpg",
+        name: "麗 淸藍",
+        role: "Devil",
+        image: "images/Cheongram.jpg",
 
-        age: "21",
-        height: "175 cm",
+        age: "Unknown",
+        height: "157 cm",
         gender: "Female",
-        occupation: "Mage",
+        occupation: "Unknown",
 
         description:
-            "A young mage fascinated by forgotten magic.",
+            "화려한 게 좋은 히키코모리",
 
         story:
-            "Aster was born into a noble family but chose to leave " +
-            "the traditional path expected of her. " +
-            "She spends most of her time researching ancient magic " +
-            "and investigating strange phenomena."
+            "기본적으로 방에 틀어박혀 나가지 않는다. " +
+            "인간관계 박살남. " +
+            "오랫동안 목소리를 내지 않은 탓에 말하는 게 서툴다."
     },
 
 
     character3: {
-        name: "LUCIAN",
-        role: "NOBLE",
-        image: "images/character3.jpg",
+        name: "느루",
+        role: "Zombie",
+        image: "images/Neuru.jpg",
 
-        age: "27",
-        height: "183 cm",
-        gender: "Male",
-        occupation: "Duke",
+        age: "22",
+        height: "162.7 cm",
+        gender: "Female",
+        occupation: "None",
 
         description:
-            "The young heir of an old and wealthy noble family.",
+            "죽어서 좀비가 된 이후 한 번 더 죽었다.",
 
         story:
-            "Lucian lost his parents at a young age and inherited " +
-            "a family burden far earlier than expected. " +
-            "Rather than relying solely on his inheritance, " +
-            "he expanded the family's wealth through business and investment."
+            "좀비가 될 때 생전의 기억을 잃었다. " +
+            "홀로 떠돌다 어느 생존자 집단에 속해 나름의 안정을 찾았으나 " +
+            "모종의 이유로 다시 혼자가 되었다. "
     }
 
 };

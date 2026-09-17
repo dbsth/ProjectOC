@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>OC ARCHIVE</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- 헤더 -->
     <header class="header">
         <div class="logo">OC ARCHIVE</div>
         <nav>
             <a href="#home">HOME</a>
             <a href="#characters">CHARACTERS</a>
-            <!-- <a href="#about">ABOUT</a> -->
         </nav>
     </header>
     
-    <!-- 메인 -->
     <main>
-        <!-- Hero -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <p class="subtitle">ORIGINAL CHARACTER ARCHIVE</p>
-
                 <h1>
                     MY<br>
                     CHARACTERS
@@ -40,28 +33,23 @@
             </div>
         </section>
         
-        <!-- 캐릭터 목록 -->
         <section id="characters" class="characters-section">
             <div class="section-title">
                 <p>CHARACTER ARCHIVE</p>
                 <h2>Characters</h2>
             </div>
-            <!-- 카테고리 필터 버튼 영역 -->
             <div class="filter-container">
-                <!-- 카테고리1: 성별 -->
                 <div class="filter-group">
                     <span class="filter-label">Gender</span>
                     <button class="filter-btn" data-category="gender" data-value="Male">Male</button>
                     <button class="filter-btn" data-category="gender" data-value="Female">Female</button>
                     <button class="filter-btn" data-category="gender" data-value="None">None</button>
                 </div>
-                <!-- 카테고리2: 종족 -->
                 <div class="filter-group">
                     <span class="filter-label">Species</span>
                     <button class="filter-btn" data-category="species" data-value="Human">Human</button>
                     <button class="filter-btn" data-category="species" data-value="Inhuman">Inhuman</button>
                 </div>
-                <!-- 카테고리3: 분류 -->
                 <div class="filter-group">
                     <span class="filter-label">Type</span>
                     <button class="filter-btn" data-category="type" data-value="Dream">Dream</button>
@@ -94,7 +82,6 @@
                         </div>
                     </div>
                 </article>
-                <!-- Character 2 -->
                 <article class="character-card"
                          data-character="Cheongram"
                          data-gender="Female"
@@ -118,7 +105,6 @@
                         </div>
                     </div>
                 </article>
-                <!-- Character 3 -->
                 <article class="character-card"
                          data-character="Neuru"
                          data-gender="Female"
@@ -142,15 +128,14 @@
             </div>
         </section>
 
-        <!-- 캐릭터 상세 모달 -->
         <div id="character-modal" class="modal">
             <div class="modal-background"></div>
             <div class="modal-content">
-                <button id="modal-close" class="modal-close">
+                <button class="modal-close">
                     ×
                 </button>
                 <div class="modal-image">
-                    <img id="modal-image" src="" alt="">
+                    <img id="modal-image" src alt>
                     <button id="prev-image" class="image-nav prev">‹</button>
                     <button id="next-image" class="image-nav next">›</button>
                 </div>
@@ -158,8 +143,7 @@
                     <p id="modal-role"
                        class="modal-role">
                     </p>
-                    <h2 id="modal-name">
-                    </h2>
+                    <h2 id="modal-name"></h2>
                     <p id="modal-description"
                        class="modal-description">
                     </p>
@@ -179,8 +163,7 @@
                     </div>
                     <div class="character-story">
                         <h3>STORY</h3>
-                        <p id="modal-story">
-                        </p>
+                        <p id="modal-story"></p>
                     </div>
                 </div>
             </div>

@@ -56,7 +56,6 @@ const characters = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    /* MODAL SLIDER */
     const modal = document.getElementById("character-modal");
     const modalImage = document.getElementById("modal-image");
     const prevImage = document.getElementById("prev-image");
@@ -97,8 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.classList.add("active");
             document.body.style.overflow = "hidden";
         });
-});
-
+    });
+}
 /* IMAGE UPDATE */
 function updateModalImage() {
     if (!currentCharacterImages || currentCharacterImages.length === 0) return;

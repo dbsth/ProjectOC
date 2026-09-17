@@ -225,3 +225,73 @@ document.addEventListener("keydown", event => {
     }
 
 });
+
+/* =========================
+   CATEGORY FILTER LOGIC
+========================= */
+
+// 현재 선택된 필터 상태를 저장하는 객체
+const activeFilters = {
+    gender: null,
+    race: null,
+    type: null
+};
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const characterCards = document.querySelectorAll(".character-card");
+const resetButton = document.getElementById("reset-filters");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const category = button.dataset.category;
+        const value = button.dataset.value;
+
+        // 같은 버튼을 또 누르면 선택 해제, 다른 버튼 누르면 선택
+        if (activeFilters[category] === value) {
+            activeFilters[category] = null;
+            button.classList.remove("active");
+        } else {
+            // 같은 카테고리의 다른 버튼 active 제거
+            document.querySelectorAll(`.filter-btn[data-category="${category}"]`)
+                .forEach(btn => btn.classList.remove("active"));
+
+            activeFilters[category] = value;
+            button.classList.add("active");
+        }
+
+        applyFilters();
+    });
+});
+
+// 초기화 버튼 이벤트
+if (resetButton) {
+    resetButton.addEventListener("click", () => {
+        activeFilters.gender = null;
+        activeFilters.race = null;
+        activeFilters.type = null;
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        applyFilters();
+    });
+}
+
+// 필터 조건에 맞춰 카드 보이기/숨기기 함수
+function applyFilters() {
+    characterCards.forEach(card => {
+        const cardGender = card.dataset.gender;
+        const cardRace = card.dataset.race;
+        const cardType = card.dataset.type;
+
+        // 조건 체크 (선택 안 된 카테고리는 true로 통과)
+        const matchGender = !activeFilters.gender || cardGender === activeFilters.gender;
+        const matchRace = !activeFilters.race || cardRace === activeFilters.race;
+        const matchType = !activeFilters.type || cardType === activeFilters.type;
+
+        // 세 조건이 모두 맞으면 보이고, 하나라도 다르면 hidden 클래스 추가
+        if (matchGender && matchRace && matchType) {
+            card.classList.remove("hidden");
+        } else {
+            card.classList.add("hidden");
+        }
+    });
+}

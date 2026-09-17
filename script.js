@@ -3,7 +3,7 @@ const characters = {
     OwnerCha: {
         name: "Unknown",
         role: "Owner Character",
-        image: [
+        images: [
             "images/OwnerCha.jpg",
             "images/OwnerCha2.jpg",
             "images/OwnerCha3.jpg"
@@ -27,7 +27,7 @@ const characters = {
     Cheongram: {
         name: "麗 淸藍",
         role: "Devil",
-        image: [
+        images: [
             "images/Cheongram.jpg",
             "images/Cheongram2.jpg"
         ],
@@ -50,7 +50,7 @@ const characters = {
     Neuru: {
         name: "느루",
         role: "Zombie",
-        image: [
+        images: [
             "images/Neuru.jpg",
             "images/Neuru2.jpg",
             "images/Neuru3.jpg"

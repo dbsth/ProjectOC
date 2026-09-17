@@ -97,117 +97,115 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.overflow = "hidden";
         });
     });
-}
 /* IMAGE UPDATE */
-function updateModalImage() {
-    if (!currentCharacterImages || currentCharacterImages.length === 0) return;
-
-    modalImage.src = currentCharacterImages[currentImageIndex];
-    modalImage.alt = "Character Image";
-
-    if (currentCharacterImages.length <= 1) {
-        if (prevImage) prevImage.style.display = "none";
-        if (nextImage) nextImage.style.display = "none";
-    } else {
-        if (prevImage) prevImage.style.display = "flex";
-        if (nextImage) nextImage.style.display = "flex";
-    }
-}
-
-if (prevImage) {
-    prevImage.addEventLIstener("click", (e) => {
-        e.stopPropagation();
-        currentImageIndex--;
-        if (currentImageIndex < 0) {
-            currentImageIndex = currentCharacterImages.length - 1;
-        }
-        updateModalImage();
-    });
-}
-
-if (nextImage) {
-    nextImage.addEventListener("click", (e) => {
-        e.stopPropagation();
-        currentImageIndex++;
-        if (currentImageIndex >= currentCharacterImages.length) {
-            currentImageIndex = 0;
-        }
-        updateModalImage();
-    });
-}
-
-/* MODAL CLOSE */
-const closeBtn = document.getElementById("modal-close") || document.querySelector(".modal-close");
-const modalBg = document.querySelector(".modal-background");
-
-if (closeBtn) {
-        closeBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            closeModal();
-        });
-    }
+    function updateModalImage() {
+        if (!currentCharacterImages || currentCharacterImages.length === 0) return;
     
-if (modalBg) {
-    modalBg.addEventListener("click", closeModal);
-}
-
-function closeModal() {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-}
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
-});
-
-/* FILTER */
-const activeFilters = {
-    gender: null,
-    species: null,
-    type: null
-};
+        modalImage.src = currentCharacterImages[currentImageIndex];
+        modalImage.alt = "Character Image";
     
-const filterButtons = document.querySelectorAll(".filter-btn");
-const characterCards = document.querySelectorAll(".character-card");
-const resetButton = document.getElementById("reset-filters");
-
-filterButtons.forEach(button => {
-    button.addEventListener("click", (e) => {
-        e.stopPropagation();
-        
-        const category = button.getAttribute("data-category");
-        const value = button.getAttribute("data-value");
-
-        if (activeFilters[category] === value) {
-            activeFilters[category] = null;
-            button.classList.remove("active");
+        if (currentCharacterImages.length <= 1) {
+            if (prevImage) prevImage.style.display = "none";
+            if (nextImage) nextImage.style.display = "none";
         } else {
-            document.querySelectorAll(`.filter-btn[data-category="${category}"]`)
-                .forEach(btn => btn.classList.remove("active"));
-            
-            activeFilters[category] = value;
-            button.classList.add("active");
+            if (prevImage) prevImage.style.display = "flex";
+            if (nextImage) nextImage.style.display = "flex";
         }
-        applyFilters();
-    });
-});
+    }
 
-function applyFilters() {
-        characterCards.forEach(card => {
-            const cardGender = card.getAttribute("data-gender");
-            const cardSpecies = card.getAttribute("data-species");
-            const cardType = card.getAttribute("data-type");
-
-            const matchGender = !activeFilters.gender || cardGender === activeFilters.gender;
-            const matchSpecies = !activeFilters.species || cardSpecies === activeFilters.species;
-            const matchType = !activeFilters.type || cardType === activeFilters.type;
-
-            if (matchGender && matchSpecies && matchType) {
-                card.classList.remove("hidden");
-            } else {
-                card.classList.add("hidden");
+    if (prevImage) {
+        prevImage.addEventLIstener("click", (e) => {
+            e.stopPropagation();
+            currentImageIndex--;
+            if (currentImageIndex < 0) {
+                currentImageIndex = currentCharacterImages.length - 1;
             }
+            updateModalImage();
         });
     }
+
+    if (nextImage) {
+        nextImage.addEventListener("click", (e) => {
+            e.stopPropagation();
+            currentImageIndex++;
+            if (currentImageIndex >= currentCharacterImages.length) {
+                currentImageIndex = 0;
+            }
+            updateModalImage();
+        });
+    }
+
+    /* MODAL CLOSE */
+    const closeBtn = document.getElementById("modal-close") || document.querySelector(".modal-close");
+    const modalBg = document.querySelector(".modal-background");
+    
+    if (closeBtn) {
+            closeBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                closeModal();
+            });
+        }
+        
+    if (modalBg) {
+        modalBg.addEventListener("click", closeModal);
+    }
+
+    function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+    });
+    
+    /* FILTER */
+    const activeFilters = {
+        gender: null,
+        species: null,
+        type: null
+    };
+    
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const characterCards = document.querySelectorAll(".character-card");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.stopPropagation();
+            
+            const category = button.getAttribute("data-category");
+            const value = button.getAttribute("data-value");
+    
+            if (activeFilters[category] === value) {
+                activeFilters[category] = null;
+                button.classList.remove("active");
+            } else {
+                document.querySelectorAll(`.filter-btn[data-category="${category}"]`)
+                    .forEach(btn => btn.classList.remove("active"));
+                
+                activeFilters[category] = value;
+                button.classList.add("active");
+            }
+            applyFilters();
+        });
+    });
+
+    function applyFilters() {
+            characterCards.forEach(card => {
+                const cardGender = card.getAttribute("data-gender");
+                const cardSpecies = card.getAttribute("data-species");
+                const cardType = card.getAttribute("data-type");
+    
+                const matchGender = !activeFilters.gender || cardGender === activeFilters.gender;
+                const matchSpecies = !activeFilters.species || cardSpecies === activeFilters.species;
+                const matchType = !activeFilters.type || cardType === activeFilters.type;
+    
+                if (matchGender && matchSpecies && matchType) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        }
 
 });

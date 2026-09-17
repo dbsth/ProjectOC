@@ -56,7 +56,7 @@ const characters = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    // MODAL ELEMENTS & LOGIC
+    /* MODAL SLIDER */
     const modal = document.getElementById("character-modal");
     const modalImage = document.getElementById("modal-image");
     const prevImage = document.getElementById("prev-image");
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalGender = document.getElementById("modal-gender");
     const modalStory = document.getElementById("modal-story");
 
-    // CARD CLICK
+    /*CARD CLICK - MODAL OPEN*/
     document.querySelectorAll(".character-card").forEach(card => {
         card.addEventListener("click", (e) => {
             const id = e.currentTarget.getAttribute("data-character");
@@ -86,22 +86,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             updateModalImage();
 
-            modalRole.textContent = character.role || "";
-            modalName.textContent = character.name || "";
-            modalDescription.textContent = character.description || "";
+            if (modalRole) modalRole.textContent = character.role || "";
+            if (modalName) modalName.textContent = character.name || "";
+            if (modalDescription) modalDescription.textContent = character.description || "";
             if (modalAge) modalAge.textContent = character.age || "";
             if (modalHeight) modalHeight.textContent = character.height || "";
             if (modalGender) modalGender.textContent = character.gender || "";
-            modalStory.textContent = character.story || "";
+            if (modalStory) modalStory.textContent = character.story || "";
 
             modal.classList.add("active");
             document.body.style.overflow = "hidden";
         });
 });
 
-// image
+/* IMAGE UPDATE */
 function updateModalImage() {
-    if (currentCharacterImages.length == 0) return;
+    if (!currentCharacterImages || currentCharacterImages.length === 0) return;
 
     modalImage.src = currentCharacterImages[currentImageIndex];
     modalImage.alt = "Character Image";
@@ -137,12 +137,20 @@ if (nextImage) {
     });
 }
 
- // MODAL
-const closeBtn = document.querySelector(".modal-close");
+/* MODAL CLOSE */
+const closeBtn = document.getElementById("modal-close") || document.querySelector(".modal-close");
 const modalBg = document.querySelector(".modal-background");
 
-if (closeBtn) closeBtn.addEventListener("click", closeModal);
-if (modalBg) modalBg.addEventListener("click", closeModal);
+if (closeBtn) {
+        closeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+    }
+    
+if (modalBg) {
+    modalBg.addEventListener("click", closeModal);
+}
 
 function closeModal() {
     modal.classList.remove("active");
@@ -153,7 +161,7 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
 });
 
-// FILTER
+/* FILTER */
 const activeFilters = {
     gender: null,
     species: null,
@@ -184,18 +192,6 @@ filterButtons.forEach(button => {
         applyFilters();
     });
 });
-
-if (resetButton) {
-    resetButton.addEventListener("click", (e) => {
-        e.stopPropagation();
-        activeFilters.gender = null;
-        activeFilters.species = null;
-        activeFilters.type = null;
-
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        applyFilters();
-    });
-}
 
 function applyFilters() {
         characterCards.forEach(card => {

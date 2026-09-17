@@ -11,7 +11,7 @@ const characters = {
         age: "Unknown",
         height: "160 cm",
         gender: "Female",
-        species: "Inhuman"
+        species: "Inhuman",
         description:
             "Owner Character.",
         story:
@@ -28,7 +28,7 @@ const characters = {
         age: "Unknown",
         height: "157 cm",
         gender: "Female",
-        species: "Devil"
+        species: "Devil",
         description:
             "화려한 게 좋은 히키코모리",
         story:

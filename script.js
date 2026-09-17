@@ -13,9 +13,8 @@ const characters = {
         description:
             "Owner Character.",
 
-        story:
-            "오너캐는 오너캐인데 관련 스토리가 없다.\n" +
-            "오너캐 이름 어케 정하는데..."
+        story:`오너캐는 오너캐인데 관련 스토리가 없다.
+        그냥 오너캐인데 그런 게 필요할까...`
     },
 
 

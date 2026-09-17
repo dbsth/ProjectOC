@@ -161,6 +161,8 @@ const resetButton = document.getElementById("reset-filters");
 
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
+        e.preventDefault();
+        
         const category = button.getAttribute("data-category");
         const value = button.getAttribute("data-value");
 
@@ -168,7 +170,8 @@ filterButtons.forEach(button => {
             activeFilters[category] = null;
             button.classList.remove("active");
         } else {
-            document.querySelectorAll(`.filter-btn[data-category="${category}"]`).forEach(btn => btn.classList.remove("active"));
+            document.querySelectorAll(`.filter-btn[data-category="${category}"]`)
+                .forEach(btn => btn.classList.remove("active"));
             
             activeFilters[category] = value;
             button.classList.add("active");

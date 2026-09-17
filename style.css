@@ -130,8 +130,12 @@ nav a:hover {
 
 /* character-card */
 .character-card {
+    display: block;
     cursor: pointer;
     transition: transform 0.4s;
+}
+.character-card.hidden {
+    display: none !important;
 }
 .character-card:hover {
     transform: translateY(-10px);

@@ -197,13 +197,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardSpecies = card.getAttribute("data-species");
             const cardType = card.getAttribute("data-type");
 
+            // 선택된 필터가 없거나(null) 값이 일치할 때만 보임
             const matchGender = !activeFilters.gender || cardGender === activeFilters.gender;
             const matchSpecies = !activeFilters.species || cardSpecies === activeFilters.species;
             const matchType = !activeFilters.type || cardType === activeFilters.type;
 
             if (matchGender && matchSpecies && matchType) {
+                card.style.display = ""; // 기본 디스플레이로 복구
                 card.classList.remove("hidden");
             } else {
+                card.style.display = "none"; // 확실히 숨김
                 card.classList.add("hidden");
             }
         });

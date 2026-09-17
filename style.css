@@ -540,7 +540,6 @@ nav a:hover {
     border: 1px solid #333;
     padding: 3px 8px;
     border-radius: 2px;
-    transition: 0.3s;
 }
 
 /* 카드에 마우스를 올렸을 때 태그의 은은한 하이라이트 효과 */

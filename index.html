@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OC ARCHIVE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="logo">OC ARCHIVE</div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#characters">CHARACTERS</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+    </header>
+
+
+    <!-- 메인 -->
+    <main>
+
+        <!-- Hero -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+                <p class="subtitle">ORIGINAL CHARACTER ARCHIVE</p>
+
+                <h1>
+                    MY<br>
+                    CHARACTERS
+                </h1>
+
+                <p class="description">
+                    내가 만든 캐릭터들의 이야기와 세계관을 기록하는 공간.
+                </p>
+
+                <a href="#characters" class="button">
+                    VIEW CHARACTERS
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- 캐릭터 목록 -->
+        <section id="characters" class="characters-section">
+
+            <div class="section-title">
+                <p>CHARACTER ARCHIVE</p>
+                <h2>Characters</h2>
+            </div>
+
+
+            <div class="character-grid">
+
+                <!-- Character 1 -->
+                <article class="character-card"
+                         data-character="character1">
+
+                    <div class="character-image">
+                        <img src="images/character1.jpg"
+                             alt="캐릭터 1">
+
+                        <span class="character-number">
+                            01
+                        </span>
+                    </div>
+
+                    <div class="character-info">
+                        <p class="character-role">
+                            KNIGHT
+                        </p>
+
+                        <h3>ARTHUR</h3>
+
+                        <p>
+                            Northern Kingdom's knight
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- Character 2 -->
+                <article class="character-card"
+                         data-character="character2">
+
+                    <div class="character-image">
+                        <img src="images/character2.jpg"
+                             alt="캐릭터 2">
+
+                        <span class="character-number">
+                            02
+                        </span>
+                    </div>
+
+                    <div class="character-info">
+                        <p class="character-role">
+                            MAGE
+                        </p>
+
+                        <h3>ASTER</h3>
+
+                        <p>
+                            A mysterious young mage
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- Character 3 -->
+                <article class="character-card"
+                         data-character="character3">
+
+                    <div class="character-image">
+                        <img src="images/character3.jpg"
+                             alt="캐릭터 3">
+
+                        <span class="character-number">
+                            03
+                        </span>
+                    </div>
+
+                    <div class="character-info">
+                        <p class="character-role">
+                            NOBLE
+                        </p>
+
+                        <h3>LUCIAN</h3>
+
+                        <p>
+                            Heir of an ancient family
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- 캐릭터 상세 모달 -->
+        <div id="character-modal" class="modal">
+
+            <div class="modal-background"></div>
+
+            <div class="modal-content">
+
+                <button class="modal-close">
+                    ×
+                </button>
+
+                <div class="modal-image">
+                    <img id="modal-image"
+                         src=""
+                         alt="">
+                </div>
+
+                <div class="modal-info">
+
+                    <p id="modal-role"
+                       class="modal-role">
+                    </p>
+
+                    <h2 id="modal-name">
+                    </h2>
+
+                    <p id="modal-description"
+                       class="modal-description">
+                    </p>
+
+
+                    <div class="profile">
+
+                        <div class="profile-row">
+                            <span>AGE</span>
+                            <strong id="modal-age"></strong>
+                        </div>
+
+                        <div class="profile-row">
+                            <span>HEIGHT</span>
+                            <strong id="modal-height"></strong>
+                        </div>
+
+                        <div class="profile-row">
+                            <span>GENDER</span>
+                            <strong id="modal-gender"></strong>
+                        </div>
+
+                        <div class="profile-row">
+                            <span>OCCUPATION</span>
+                            <strong id="modal-occupation"></strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="character-story">
+
+                        <h3>STORY</h3>
+
+                        <p id="modal-story">
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- About -->
+        <section id="about" class="about-section">
+
+            <p class="subtitle">ABOUT THIS SITE</p>
+
+            <h2>
+                A PLACE FOR<br>
+                MY STORIES.
+            </h2>
+
+            <p>
+                Original Character
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 OC ARCHIVE</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

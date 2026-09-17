@@ -10,25 +10,20 @@
 </head>
 
 <body>
-
     <!-- 헤더 -->
     <header class="header">
         <div class="logo">OC ARCHIVE</div>
-
         <nav>
             <a href="#home">HOME</a>
             <a href="#characters">CHARACTERS</a>
             <!-- <a href="#about">ABOUT</a> -->
         </nav>
     </header>
-
-
+    
     <!-- 메인 -->
     <main>
-
         <!-- Hero -->
         <section id="home" class="hero">
-
             <div class="hero-content">
                 <p class="subtitle">ORIGINAL CHARACTER ARCHIVE</p>
 
@@ -36,27 +31,21 @@
                     MY<br>
                     CHARACTERS
                 </h1>
-
                 <p class="description">
                     OC 정리 사이트
                 </p>
-
                 <a href="#characters" class="button">
                     VIEW CHARACTERS
                 </a>
             </div>
-
         </section>
-
-
+        
         <!-- 캐릭터 목록 -->
         <section id="characters" class="characters-section">
-
             <div class="section-title">
                 <p>CHARACTER ARCHIVE</p>
                 <h2>Characters</h2>
             </div>
-
             <!-- 카테고리 필터 버튼 영역 -->
             <div class="filter-container">
                 <!-- 카테고리1: 성별 -->
@@ -66,14 +55,12 @@
                     <button class="filter-btn" data-category="gender" data-value="Female">Female</button>
                     <button class="filter-btn" data-category="gender" data-value="None">None</button>
                 </div>
-
                 <!-- 카테고리2: 종족 -->
                 <div class="filter-group">
                     <span class="filter-label">Species</span>
                     <button class="filter-btn" data-category="species" data-value="Human">Human</button>
                     <button class="filter-btn" data-category="species" data-value="Inhuman">Inhuman</button>
                 </div>
-
                 <!-- 카테고리3: 분류 -->
                 <div class="filter-group">
                     <span class="filter-label">Type</span>
@@ -82,9 +69,7 @@
                     <button class="filter-btn" data-category="type" data-value="Original">Original</button>
                 </div>
             </div>
-
             <div class="character-grid">
-
                 <!-- Character 1 -->
                 <article class="character-card"
                          data-character="OwnerCha"
@@ -92,29 +77,23 @@
                          data-species="Inhuman"
                          data-type="Original"
                     >
-
                     <div class="character-image">
                         <img src="images/OwnerCha.jpg"
                              alt="OwnerCha">
                     </div>
-
                     <div class="character-info">
                         <p class="character-role">
                             Owner Character
                         </p>
                         <h3>Unknown</h3>
                         <p>오너캐 이름 어케 정하는데</p>
-
                         <div class="character-tags">
                             <span class="tag">Female</span>
                             <span class="tag">Inhuman</span>
                             <span class="tag">Original</span>
                         </div>
                     </div>
-
                 </article>
-
-
                 <!-- Character 2 -->
                 <article class="character-card"
                          data-character="Cheongram"
@@ -122,19 +101,16 @@
                          data-species="Inhuman"
                          data-type="Community"
                     >
-
                     <div class="character-image">
                         <img src="images/Cheongram.jpg"
                              alt="Cheongram">
                     </div>
-
                     <div class="character-info">
                         <p class="character-role">
                             Devil
                         </p>
                         <h3>麗 淸藍</h3>
                         <p>화려한 게 좋은 히키코모리</p>
-
                         <div class="character-tags">
                             <span class="tag">Female</span>
                             <span class="tag">Inhuman</span>
@@ -142,25 +118,20 @@
                         </div>
                     </div>
                 </article>
-
-
                 <!-- Character 3 -->
                 <article class="character-card"
                          data-character="Neuru"
                          data-gender="Female"
                          data-species="Inhuman"
                          data-type="Community">
-
                     <div class="character-image">
                         <img src="images/Neuru.jpg"
                              alt="Neuru">
                     </div>
-
                     <div class="character-info">
                         <p class="character-role">Zombie</p>
                         <h3>느루</h3>
                         <p>특이사항: 죽음</p>
-
                         <div class="character-tags">
                             <span class="tag">Female</span>
                             <span class="tag">Inhuman</span>
@@ -168,107 +139,57 @@
                         </div>
                     </div>
                 </article>
-
             </div>
         </section>
 
-
         <!-- 캐릭터 상세 모달 -->
         <div id="character-modal" class="modal">
-
             <div class="modal-background"></div>
-
             <div class="modal-content">
-
                 <button class="modal-close">
                     ×
                 </button>
-
                 <div class="modal-image">
                     <img id="modal-image" src="" alt="">
-    
                     <button id="prev-image" class="image-nav prev">‹</button>
                     <button id="next-image" class="image-nav next">›</button>
                 </div>
-
                 <div class="modal-info">
-
                     <p id="modal-role"
                        class="modal-role">
                     </p>
-
                     <h2 id="modal-name">
                     </h2>
-
                     <p id="modal-description"
                        class="modal-description">
                     </p>
-
-
                     <div class="profile">
-
                         <div class="profile-row">
                             <span>AGE</span>
                             <strong id="modal-age"></strong>
                         </div>
-
                         <div class="profile-row">
                             <span>HEIGHT</span>
                             <strong id="modal-height"></strong>
                         </div>
-
                         <div class="profile-row">
                             <span>GENDER</span>
                             <strong id="modal-gender"></strong>
                         </div>
-
-                        <div class="profile-row">
-                            <span>OCCUPATION</span>
-                            <strong id="modal-occupation"></strong>
-                        </div>
-
                     </div>
-
-
                     <div class="character-story">
-
                         <h3>STORY</h3>
-
                         <p id="modal-story">
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
-
-        <!-- About -->
-        <!-- <section id="about" class="about-section">
-
-            <p class="subtitle">ABOUT THIS SITE</p>
-
-            <h2>
-                A PLACE FOR<br>
-                MY STORIES.
-            </h2>
-
-            <p>
-                Original Character
-            </p>
-
-        </section> -->
-
     </main>
-
 
     <footer>
         <p>© 2026 OC ARCHIVE</p>
     </footer>
-
 
     <script src="script.js"></script>
 

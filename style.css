@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family: 'Inter', sans-serif;
@@ -19,73 +16,48 @@ body {
     color: #f5f5f5;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
+/* header */
 .header {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 80px;
-
     padding: 0 6vw;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     z-index: 100;
-    
     background: rgba(17, 17, 17, 0.85);
     backdrop-filter: blur(10px);
 }
-
-
 .logo {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 3px;
 }
-
-
 nav {
     display: flex;
     gap: 35px;
 }
-
-
 nav a {
     color: #aaa;
     text-decoration: none;
-
     font-size: 12px;
     letter-spacing: 2px;
-
     transition: 0.3s;
 }
-
 
 nav a:hover {
     color: white;
 }
 
-
-/* =========================
-   HERO
-========================= */
-
+/* hero */
 .hero {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
-
     padding: 120px 10vw;
-
     background:
         linear-gradient(
             90deg,
@@ -94,366 +66,220 @@ nav a:hover {
             rgba(17,17,17,0.3) 100%
         ),
         url("images/character1.jpg");
-
     background-size: cover;
     background-position: center;
 }
-
-
 .hero-content {
     max-width: 650px;
 }
-
-
 .subtitle {
     color: #999;
-
     font-size: 12px;
     letter-spacing: 4px;
-
     margin-bottom: 25px;
 }
-
-
 .hero h1 {
     font-family: 'Playfair Display', serif;
-
     font-size: clamp(60px, 9vw, 130px);
-
     line-height: 0.9;
-
     margin-bottom: 35px;
 }
-
-
 .description {
     color: #aaa;
-
     line-height: 1.8;
-
     margin-bottom: 40px;
 }
-
-
 .button {
     display: inline-block;
-
     padding: 15px 28px;
-
     border: 1px solid #666;
-
     color: white;
     text-decoration: none;
-
     font-size: 12px;
     letter-spacing: 2px;
-
     transition: 0.3s;
 }
-
-
 .button:hover {
     background: white;
     color: #111;
 }
 
-
-/* =========================
-   CHARACTERS
-========================= */
-
+/* characters */
 .characters-section {
     padding: 150px 8vw;
 }
-
-
 .section-title {
     margin-bottom: 60px;
 }
-
-
 .section-title p {
     color: #777;
-
     font-size: 11px;
     letter-spacing: 4px;
-
     margin-bottom: 10px;
 }
-
-
 .section-title h2 {
     font-family: 'Playfair Display', serif;
 
     font-size: 64px;
 }
-
-
 .character-grid {
     display: grid;
-
     grid-template-columns:
         repeat(3, 1fr);
-
     gap: 25px;
 }
 
-
-/* 캐릭터 카드 */
-
+/* character-card */
 .character-card {
     cursor: pointer;
 
     transition: transform 0.4s;
 }
-
-
 .character-card:hover {
     transform: translateY(-10px);
 }
-
-
 .character-image {
     position: relative;
-
     width: 100%;
     height: 500px;
-
     overflow: hidden;
-
     background: #222;
 }
-
-
 .character-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     transition: transform 0.6s;
 }
-
-
 .character-card:hover img {
     transform: scale(1.05);
 }
-
-
 .character-number {
     display: none !important;
 }
-
-
 .character-info {
     padding: 25px 5px;
 }
-
-
 .character-role {
     color: #777;
-
     font-size: 10px;
     letter-spacing: 3px;
-
     margin-bottom: 10px;
 }
-
-
 .character-info h3 {
     font-family: 'Playfair Display', serif;
-
     font-size: 30px;
-
     margin-bottom: 8px;
 }
-
-
 .character-info p:last-child {
     color: #777;
-
     font-size: 12px;
 }
 
-
-/* =========================
-   MODAL
-========================= */
-
+/* modal */
 .modal {
     position: fixed;
-
     inset: 0;
-
     z-index: 200;
-
     display: none;
-
     align-items: center;
     justify-content: center;
 }
-
-
 .modal.active {
     display: flex;
 }
-
-
 .modal-background {
     position: absolute;
-
     inset: 0;
-
     background: rgba(0,0,0,0.85);
 }
-
-
 .modal-content {
     position: relative;
-
     z-index: 1;
-
     width: min(1000px, 90vw);
     max-height: 90vh;
-
     overflow: auto;
-
     display: grid;
-
     grid-template-columns:
         40% 60%;
-
     background: #181818;
 }
-
-
 .modal-close {
     position: absolute;
-
     top: 20px;
     right: 25px;
-
     z-index: 5;
-
     border: none;
     background: none;
-
     color: white;
-
     font-size: 30px;
-
     cursor: pointer;
 }
-
-
 .modal-image {
     min-height: 650px;
 }
-
-
 .modal-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
-
-
 .modal-info {
     padding: 70px 50px;
 }
-
-
 .modal-role {
     color: #777;
-
     font-size: 11px;
     letter-spacing: 4px;
-
     margin-bottom: 15px;
 }
-
-
 .modal-info h2 {
     font-family: 'Playfair Display', serif;
-
     font-size: 55px;
-
     margin-bottom: 25px;
 }
-
-
 .modal-description {
     color: #aaa;
-
     line-height: 1.8;
-
     margin-bottom: 40px;
 }
 
+/* profile */
+.profile {
+    border-top: 1px solid #333;
+    margin-bottom: 40px;
+}
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+.profile-row span {
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.profile-row strong {
+    font-size: 12px;
+    font-weight: 400;
+}
 
-/* STORY 줄바꿈 */
+/* story */
+.character-story h3 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+.character-story p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.9;
+}
 #modal-story {
     white-space: pre-line;
 }
 
-
-/* 프로필 */
-
-.profile {
-    border-top: 1px solid #333;
-
-    margin-bottom: 40px;
-}
-
-
-.profile-row {
-    display: flex;
-    justify-content: space-between;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid #333;
-}
-
-
-.profile-row span {
-    color: #666;
-
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-
-.profile-row strong {
-    font-size: 12px;
-
-    font-weight: 400;
-}
-
-
-/* 스토리 */
-
-.character-story h3 {
-    font-size: 11px;
-    letter-spacing: 3px;
-
-    margin-bottom: 15px;
-}
-
-
-.character-story p {
-    color: #999;
-
-    font-size: 13px;
-
-    line-height: 1.9;
-}
-
-/* =========================
-   FILTER STYLES
-========================= */
-
+/* filter */
 .filter-container {
     margin-bottom: 40px;
     padding: 25px;
@@ -463,21 +289,18 @@ nav a:hover {
     flex-direction: column;
     gap: 15px;
 }
-
 .filter-group {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
 }
-
 .filter-label {
     font-size: 11px;
     letter-spacing: 2px;
     color: #888;
     width: 60px;
 }
-
 .filter-btn {
     background: transparent;
     border: 1px solid #444;
@@ -487,19 +310,16 @@ nav a:hover {
     cursor: pointer;
     transition: 0.2s;
 }
-
 .filter-btn:hover {
     border-color: #888;
     color: #fff;
 }
-
 .filter-btn.active {
     background: #fff;
     color: #111;
     border-color: #fff;
     font-weight: 600;
 }
-
 .reset-btn {
     align-self: flex-start;
     background: none;
@@ -510,28 +330,21 @@ nav a:hover {
     cursor: pointer;
     margin-top: 5px;
 }
-
 .reset-btn:hover {
     color: #aaa;
 }
-
-/* 필터링되어 숨겨지는 카드의 스타일 */
 .character-card.hidden {
     display: none !important;
 }
 
 
-/* =========================
-   CHARACTER CARD TAGS
-========================= */
-
+/* tag */
 .character-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: 15px; /* 설명 문구와의 간격 */
+    margin-top: 15px;
 }
-
 .tag {
     font-size: 10px;
     letter-spacing: 1px;
@@ -541,112 +354,73 @@ nav a:hover {
     padding: 3px 8px;
     border-radius: 2px;
 }
-
-/* 카드에 마우스를 올렸을 때 태그의 은은한 하이라이트 효과 */
 .character-card:hover .tag {
     border-color: #555;
     color: #ccc;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
+/* footer */
 footer {
     padding: 40px 8vw;
-
     color: #555;
-
     font-size: 10px;
-
     letter-spacing: 2px;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* responsive */
 @media (max-width: 800px) {
-
     nav {
         display: none;
     }
-
-
     .character-grid {
         grid-template-columns: 1fr;
     }
-
-
     .character-image {
         height: 500px;
     }
-
-
     .modal-content {
         grid-template-columns: 1fr;
 
         max-height: 90vh;
     }
-
-
     .modal-image {
         height: 400px;
         min-height: auto;
     }
-
-
     .modal-info {
         padding: 40px 30px;
     }
-
-
     .modal-info h2 {
         font-size: 40px;
     }
-
 }
 
-/* =========================
-   IMAGE SLIDER
-========================= */
-
+/* image slider */
 .modal-image {
     position: relative;
 }
-
 .image-nav {
     position: absolute;
     bottom: 15px;
-
     width: 38px;
     height: 38px;
-
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: rgba(0, 0, 0, 0.6);
     color: white;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 24px;
     cursor: pointer;
-
     transition: 0.2s;
 }
-
 .image-nav:hover {
     background: rgba(255, 255, 255, 0.9);
     color: black;
 }
-
 .image-nav.prev {
     right: 65px;
 }
-
 .image-nav.next {
     right: 15px;
 }

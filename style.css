@@ -458,35 +458,74 @@ nav a:hover {
     line-height: 1.9;
 }
 
-
 /* =========================
-   ABOUT
+   FILTER STYLES
 ========================= */
 
-.about-section {
-    padding: 180px 10vw;
-
-    background: #181818;
-}
-
-
-.about-section h2 {
-    font-family: 'Playfair Display', serif;
-
-    font-size: clamp(50px, 7vw, 100px);
-
-    line-height: 1;
-
+.filter-container {
     margin-bottom: 40px;
+    padding: 20px;
+    background: #181818;
+    border: 1px solid #333;
+    display: flex;
+    fles-direction: column;
+    gap: 15px;
 }
 
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-.about-section > p:last-child {
-    max-width: 550px;
-
+.filter-label {
+    font-size: 11px;
+    letter-spacing: 2px;
     color: #888;
+    width: 60px;
+}
 
-    line-height: 1.8;
+.filter-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 6px 14px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #888;
+    color: #fff;
+}
+
+.filter-btn.active {
+    background: #fff;
+    color: #111;
+    border-color: #fff;
+    font-weight: 600;
+}
+
+.reset-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.reset-btn:hover {
+    color: #aaa;
+}
+
+/* 필터링되어 숨겨지는 카드의 스타일 */
+.character-card.hidden {
+    display: none !important;
 }
 
 

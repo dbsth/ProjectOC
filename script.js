@@ -12,7 +12,7 @@ const characters = {
         age: "Unknown",
         height: "160 cm",
         gender: "Female",
-        occupation: "Unknown",
+        species: "Human"
 
         description:
             "Owner Character.",
@@ -35,7 +35,7 @@ const characters = {
         age: "Unknown",
         height: "157 cm",
         gender: "Female",
-        occupation: "Unknown",
+        species: "Devil"
 
         description:
             "화려한 게 좋은 히키코모리",
@@ -59,8 +59,8 @@ const characters = {
         age: "22",
         height: "162.7 cm",
         gender: "Female",
-        occupation: "None",
-
+        species: "Zombie",
+        
         description:
             "죽어서 좀비가 된 이후 한 번 더 죽었다.",
 

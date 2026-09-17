@@ -241,15 +241,7 @@ nav a:hover {
 
 
 .character-number {
-    position: absolute;
-
-    top: 20px;
-    right: 20px;
-
-    font-size: 12px;
-    letter-spacing: 2px;
-
-    color: white;
+    display: none !important;
 }
 
 

@@ -1,6 +1,6 @@
 const characters = {
 
-    OwnerCHa: {
+    OwnerCha: {
         name: "Unknown",
         role: "Owner Character",
         image: "images/OwnerCha.jpg",

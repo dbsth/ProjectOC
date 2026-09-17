@@ -118,51 +118,34 @@ const modalStory =
    OPEN MODAL
 ========================= */
 
-document
-    .querySelectorAll(".character-card")
-    .forEach(card => {
+document.querySelectorAll(".character-card").forEach(card => {
+    card.addEventListener("click", (e) => {
+        const id = e.currentTarget.dataset.character;
+        const character = characters[id];
 
-        card.addEventListener("click", () => {
+        if (!character) return;
 
-            console.log("캐릭터 카드 클릭됨");
+       
+        currentCharacterImages = character.images; 
+        currentImageIndex = 0;
 
-            const id = card.dataset.character;
+        updateModalImage();
 
-            console.log("캐릭터 ID:", id);
+        modalRole.textContent = character.role;
+        modalName.textContent = character.name;
+        modalDescription.textContent = character.description;
 
-            const character = characters[id];
+        modalAge.textContent = character.age;
+        modalHeight.textContent = character.height;
+        modalGender.textContent = character.gender;
+        modalOccupation.textContent = character.occupation;
 
-            console.log("캐릭터 정보:", character);
+        modalStory.textContent = character.story;
 
-            if (!character) {
-                console.log("캐릭터 정보를 찾을 수 없습니다.");
-                return;
-            }
-
-            // 캐릭터 이미지 설정
-            currentCharacterImages = character.images;
-            currentImageIndex = 0;
-
-            updateModalImage();
-
-            modalRole.textContent = character.role;
-            modalName.textContent = character.name;
-            modalDescription.textContent = character.description;
-
-            modalAge.textContent = character.age;
-            modalHeight.textContent = character.height;
-            modalGender.textContent = character.gender;
-            modalOccupation.textContent = character.occupation;
-
-            modalStory.textContent = character.story;
-
-            modal.classList.add("active");
-
-            document.body.style.overflow = "hidden";
-
-        });
-
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
     });
+});
 
 function updateModalImage() {
 

@@ -233,7 +233,7 @@ document.addEventListener("keydown", event => {
 // 현재 선택된 필터 상태를 저장하는 객체
 const activeFilters = {
     gender: null,
-    race: null,
+    species: null,
     type: null
 };
 
@@ -267,7 +267,7 @@ filterButtons.forEach(button => {
 if (resetButton) {
     resetButton.addEventListener("click", () => {
         activeFilters.gender = null;
-        activeFilters.race = null;
+        activeFilters.species = null;
         activeFilters.type = null;
 
         filterButtons.forEach(btn => btn.classList.remove("active"));
@@ -279,12 +279,12 @@ if (resetButton) {
 function applyFilters() {
     characterCards.forEach(card => {
         const cardGender = card.dataset.gender;
-        const cardRace = card.dataset.race;
+        const cardRace = card.dataset.species;
         const cardType = card.dataset.type;
 
         // 조건 체크 (선택 안 된 카테고리는 true로 통과)
         const matchGender = !activeFilters.gender || cardGender === activeFilters.gender;
-        const matchRace = !activeFilters.race || cardRace === activeFilters.race;
+        const matchRace = !activeFilters.species || cardRace === activeFilters.species;
         const matchType = !activeFilters.type || cardType === activeFilters.type;
 
         // 세 조건이 모두 맞으면 보이고, 하나라도 다르면 hidden 클래스 추가

@@ -65,6 +65,7 @@ nav a:hover {
             rgba(17,17,17,0.85) 50%,
             rgba(17,17,17,0.3) 100%
         ),
+        url("images/character1.jpg");
     background-size: cover;
     background-position: center;
 }

@@ -12,7 +12,7 @@ const characters = {
         age: "Unknown",
         height: "160 cm",
         gender: "Female",
-        species: "Human"
+        species: "Inhuman"
 
         description:
             "Owner Character.",

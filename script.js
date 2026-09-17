@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalGender = document.getElementById("modal-gender");
     const modalStory = document.getElementById("modal-story");
 
-    /*CARD CLICK - MODAL OPEN*/
+    /* CARD CLICK - MODAL OPEN */
     document.querySelectorAll(".character-card").forEach(card => {
         card.addEventListener("click", (e) => {
             const id = e.currentTarget.getAttribute("data-character");
@@ -97,13 +97,14 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.overflow = "hidden";
         });
     });
-/* IMAGE UPDATE */
+
+    /* IMAGE UPDATE */
     function updateModalImage() {
         if (!currentCharacterImages || currentCharacterImages.length === 0) return;
-    
+
         modalImage.src = currentCharacterImages[currentImageIndex];
         modalImage.alt = "Character Image";
-    
+
         if (currentCharacterImages.length <= 1) {
             if (prevImage) prevImage.style.display = "none";
             if (nextImage) nextImage.style.display = "none";
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (prevImage) {
-        prevImage.addEventLIstener("click", (e) => {
+        prevImage.addEventListener("click", (e) => {
             e.stopPropagation();
             currentImageIndex--;
             if (currentImageIndex < 0) {
@@ -136,15 +137,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* MODAL CLOSE */
-    const closeBtn = document.getElementById("modal-close") || document.querySelector(".modal-close");
+    const closeBtn = document.querySelector(".modal-close");
     const modalBg = document.querySelector(".modal-background");
-    
+
     if (closeBtn) {
-            closeBtn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                closeModal();
-            });
-        }
+        closeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+    }
         
     if (modalBg) {
         modalBg.addEventListener("click", closeModal);
@@ -158,14 +159,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeModal();
     });
-    
+
     /* FILTER */
     const activeFilters = {
         gender: null,
         species: null,
         type: null
     };
-    
+        
     const filterButtons = document.querySelectorAll(".filter-btn");
     const characterCards = document.querySelectorAll(".character-card");
 
@@ -175,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const category = button.getAttribute("data-category");
             const value = button.getAttribute("data-value");
-    
+
             if (activeFilters[category] === value) {
                 activeFilters[category] = null;
                 button.classList.remove("active");
@@ -191,21 +192,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function applyFilters() {
-            characterCards.forEach(card => {
-                const cardGender = card.getAttribute("data-gender");
-                const cardSpecies = card.getAttribute("data-species");
-                const cardType = card.getAttribute("data-type");
-    
-                const matchGender = !activeFilters.gender || cardGender === activeFilters.gender;
-                const matchSpecies = !activeFilters.species || cardSpecies === activeFilters.species;
-                const matchType = !activeFilters.type || cardType === activeFilters.type;
-    
-                if (matchGender && matchSpecies && matchType) {
-                    card.classList.remove("hidden");
-                } else {
-                    card.classList.add("hidden");
-                }
-            });
-        }
+        characterCards.forEach(card => {
+            const cardGender = card.getAttribute("data-gender");
+            const cardSpecies = card.getAttribute("data-species");
+            const cardType = card.getAttribute("data-type");
+
+            const matchGender = !activeFilters.gender || cardGender === activeFilters.gender;
+            const matchSpecies = !activeFilters.species || cardSpecies === activeFilters.species;
+            const matchType = !activeFilters.type || cardType === activeFilters.type;
+
+            if (matchGender && matchSpecies && matchType) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+    }
 
 });

@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalImage = document.getElementById("modal-image");
     const prevImage = document.getElementById("prev-image");
     const nextImage = document.getElementById("next-image");
-
+    
     let currentCharacterImages = [];
     let currentImageIndex = 0;
 
@@ -81,24 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!character) return;
 
-            currentCharacterImages = character.images||[];
+            currentCharacterImages = character.images || [];
             currentImageIndex = 0;
 
             updateModalImage();
 
-            modalRole.textContent = character.role;
-            modalName.textContent = character.name;
-            modalDescription.textContent = character.description;
-            modalAge.textContent = character.age;
-            modalHeight.textContent = character.height;
-            modalGender.textContent = character.gender;
-            modalStory.textContent = character.story;
+            modalRole.textContent = character.role || "";
+            modalName.textContent = character.name || "";
+            modalDescription.textContent = character.description || "";
+            if (modalAge) modalAge.textContent = character.age || "";
+            if (modalHeight) modalHeight.textContent = character.height || "";
+            if (modalGender) modalGender.textContent = character.gender || "";
+            modalStory.textContent = character.story || "";
 
             modal.classList.add("active");
             document.body.style.overflow = "hidden";
         });
 });
 
+// image
 function updateModalImage() {
     if (currentCharacterImages.length == 0) return;
 
@@ -114,6 +115,28 @@ function updateModalImage() {
     }
 }
 
+if (prevImage) {
+    prevImage.addEventLIstener("click", (e) => {
+        e.stopPropagation();
+        currentImageIndex--;
+        if (currentImageIndex < 0) {
+            currentImageIndex = currentCharacterImages.length - 1;
+        }
+        updateModalImage();
+    });
+}
+
+if (nextImage) {
+    nextImage.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentImageIndex++;
+        if (currentImageIndex >= currentCharacterImages.length) {
+            currentImageIndex = 0;
+        }
+        updateModalImage();
+    });
+}
+
  // MODAL
 const closeBtn = document.querySelector(".modal-close");
 const modalBg = document.querySelector(".modal-background");
@@ -126,26 +149,8 @@ function closeModal() {
     document.body.style.overflow = "";
 }
 
-if (prevImage) {
-    prevImage.addEventLIstener("click", event => {
-        event.stopPropagation();
-        currentImageIndex--;
-        if (currentImageIndex < 0) currentImageIndex = currentCharacterImages.length - 1;
-        updateModalImage();
-    });
-}
-
-if (nextImage) {
-    nextImage.addEventListener("click", event => {
-        event.stopPropagation();
-        currentImageIndex++;
-        if (currentImageIndex >= currentCharacterImages.length) currentImageIndex = 0;
-        updateModalImage();
-    });
-}
-
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeModal();
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
 });
 
 // FILTER
@@ -153,15 +158,15 @@ const activeFilters = {
     gender: null,
     species: null,
     type: null
-}
+};
     
 const filterButtons = document.querySelectorAll(".filter-btn");
 const characterCards = document.querySelectorAll(".character-card");
 const resetButton = document.getElementById("reset-filters");
 
 filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        e.preventDefault();
+    button.addEventListener("click", (e) => {
+        e.stopPropagation();
         
         const category = button.getAttribute("data-category");
         const value = button.getAttribute("data-value");
@@ -181,13 +186,14 @@ filterButtons.forEach(button => {
 });
 
 if (resetButton) {
-    resetButton.addEventListener("click", () => {
+    resetButton.addEventListener("click", (e) => {
+        e.stopPropagation();
         activeFilters.gender = null;
-            activeFilters.species = null;
-            activeFilters.type = null;
+        activeFilters.species = null;
+        activeFilters.type = null;
 
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            applyFilters();
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        applyFilters();
     });
 }
 

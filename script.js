@@ -40,8 +40,7 @@ const characters = {
         role: "Zombie",
         images: [
             "images/Neuru.jpg",
-            "images/Neuru2.jpg",
-            "images/Neuru3.jpg"
+            "images/Neuru2.jpg"
         ],
         age: "22",
         height: "162.7 cm",

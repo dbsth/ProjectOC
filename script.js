@@ -106,51 +106,38 @@ document
 
         card.addEventListener("click", () => {
 
-            const id =
-                card.dataset.character;
+            console.log("캐릭터 카드 클릭됨");
 
-            const character =
-                characters[id];
+            const id = card.dataset.character;
 
+            console.log("캐릭터 ID:", id);
 
-            modalImage.src =
-                character.image;
+            const character = characters[id];
 
-            modalImage.alt =
-                character.name;
+            console.log("캐릭터 정보:", character);
 
+            if (!character) {
+                console.log("캐릭터 정보를 찾을 수 없습니다.");
+                return;
+            }
 
-            modalRole.textContent =
-                character.role;
+            modalImage.src = character.image;
+            modalImage.alt = character.name;
 
-            modalName.textContent =
-                character.name;
+            modalRole.textContent = character.role;
+            modalName.textContent = character.name;
+            modalDescription.textContent = character.description;
 
-            modalDescription.textContent =
-                character.description;
+            modalAge.textContent = character.age;
+            modalHeight.textContent = character.height;
+            modalGender.textContent = character.gender;
+            modalOccupation.textContent = character.occupation;
 
-
-            modalAge.textContent =
-                character.age;
-
-            modalHeight.textContent =
-                character.height;
-
-            modalGender.textContent =
-                character.gender;
-
-            modalOccupation.textContent =
-                character.occupation;
-
-
-            modalStory.textContent =
-                character.story;
-
+            modalStory.textContent = character.story;
 
             modal.classList.add("active");
 
-            document.body.style.overflow =
-                "hidden";
+            document.body.style.overflow = "hidden";
 
         });
 
